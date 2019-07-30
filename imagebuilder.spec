@@ -16,7 +16,7 @@
 %{!?release: %global release 1}
 %global package_name imagebuilder
 %global product_name Container Image Builder
-%global import_path github.com/openshift/imagebuilder
+%global import_path github.com/Prashanth684/imagebuilder
 
 Name:           %{package_name}
 Version:        %{version}
@@ -36,15 +36,15 @@ Builds Dockerfile using the Docker client
 %prep
 GOPATH=$RPM_BUILD_DIR/go
 rm -rf $GOPATH
-mkdir -p $GOPATH/{src/github.com/openshift,bin,pkg}
+mkdir -p $GOPATH/{src/github.com/Prashanth684,bin,pkg}
 %setup -q -c -n imagebuilder
 cd ..
-mv imagebuilder $GOPATH/src/github.com/openshift/imagebuilder
-ln -s $GOPATH/src/github.com/openshift/imagebuilder imagebuilder
+mv imagebuilder $GOPATH/src/github.com/Prashanth684/imagebuilder
+ln -s $GOPATH/src/github.com/Prashanth684/imagebuilder imagebuilder
 
 %build
 export GOPATH=$RPM_BUILD_DIR/go
-cd $GOPATH/src/github.com/openshift/imagebuilder
+cd $GOPATH/src/github.com/Prashanth684/imagebuilder
 go install ./cmd/imagebuilder
 
 %install
